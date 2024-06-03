@@ -1,21 +1,34 @@
-
 <!-- app/views/people/index.html.erb -->
 <h1>Lista de Personas</h1>
 <button id="reloadButton">Recargar Personas</button>
 <ul id="userList"></ul>
 
 <script>
-document.getElementById("reloadButton").addEventListener("click", function() {
-    fetch('/refresh')
-        .then(response => response.json())
-        .then(users => {
-            const userList = document.getElementById("userList");
-            userList.innerHTML = '';  // Limpiar la lista antes de agregar nuevos elementos
-            users.forEach(user => {
-                const userItem = document.createElement("li");
-                userItem.textContent = `Nombre: ${user.name}, Email: ${user.email}`;
-                userList.appendChild(userItem);
-            });
-        }).catch(error => console.error('Error:', error));  // Agregar manejo de errores
+document.addEventListener("DOMContentLoaded", function() {
+    const totalUsers = <%= @total_users %>;
+
+    document.getElementById("reloadButton").addEventListener("click", function() {
+        fetch('/refresh')
+            .then(response => response.json())
+            .then(user => {
+                if (user) {
+                    const userList = document.getElementById("userList");
+                    const userItem = document.createElement("li");
+                    userItem.textContent = `Nombre: ${user.name}, Email: ${user.email}`;
+                    userList.appendChild(userItem);
+
+                    // Verificar si ya se han mostrado todos los usuarios
+                    if (userList.children.length >= totalUsers) {
+                        document.getElementById("reloadButton").disabled = true;
+                        alert("Se han mostrado todos los usuarios.");
+                    }
+                } else {
+                    // En caso de que no haya más usuarios por mostrar
+                    document.getElementById("reloadButton").disabled = true;
+                    alert("Se han mostrado todos los usuarios.");
+                }
+            })
+            .catch(error => console.error('Error:', error));  // Agregar manejo de errores
+    });
 });
 </script>

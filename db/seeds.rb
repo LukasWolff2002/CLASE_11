@@ -8,8 +8,8 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-User.create(name: "Bob", email: 'hola@gmail.com')
-User.create(name: "Alice", email: 'hola@gmail.com')
-User.create(name: "Carol", email: 'hola@gmail.com')
-User.create(name: "David", email: 'hola@gmail.com')
-User.create(name: "Eve", email: 'hola@gmail.com')
+User.create(name: "Bob", email: 'Bob@gmail.com')
+User.create(name: "Alice", email: 'Alice@gmail.com')
+User.create(name: "Carol", email: 'Carol@gmail.com')
+User.create(name: "David", email: 'David@gmail.com')
+User.create(name: "Eve", email: 'Eve@gmail.com')
