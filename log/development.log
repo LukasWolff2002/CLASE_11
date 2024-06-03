@@ -487,3 +487,875 @@ Processing by UsersController#refresh as */*
 Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 630)
 
 
+  [1m[35m (88.1ms)[0m  [1m[35mCREATE DATABASE "clase_11_development" ENCODING = 'unicode'[0m
+  [1m[35m (44.8ms)[0m  [1m[35mCREATE DATABASE "clase_11_test" ENCODING = 'unicode'[0m
+  [1m[35m (6.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5892796588193200770)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-06-03 13:23:24.348261', '2024-06-03 13:23:24.348263') RETURNING "key"[0m
+Migrating to CreateUsers (20240603130819)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying, "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240603130819') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(5892796588193200770)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bob"], ["email", "hola@gmail.com"], ["created_at", "2024-06-03 13:23:26.961271"], ["updated_at", "2024-06-03 13:23:26.961271"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Alice"], ["email", "hola@gmail.com"], ["created_at", "2024-06-03 13:23:26.963938"], ["updated_at", "2024-06-03 13:23:26.963938"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Carol"], ["email", "hola@gmail.com"], ["created_at", "2024-06-03 13:23:26.966260"], ["updated_at", "2024-06-03 13:23:26.966260"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "David"], ["email", "hola@gmail.com"], ["created_at", "2024-06-03 13:23:26.968517"], ["updated_at", "2024-06-03 13:23:26.968517"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Eve"], ["email", "hola@gmail.com"], ["created_at", "2024-06-03 13:23:26.969967"], ["updated_at", "2024-06-03 13:23:26.969967"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:23:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 213)
+  Rendered layout layouts/application.html.erb (Duration: 212.1ms | Allocations: 106046)
+Completed 200 OK in 239ms (Views: 216.4ms | ActiveRecord: 0.0ms | Allocations: 120901)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:38 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 40ms (Views: 0.8ms | ActiveRecord: 12.7ms | Allocations: 12465)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:39 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 641)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:40 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:40 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 639)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:40 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 639)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:40 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:41 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:41 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:41 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:41 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:42 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:42 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:42 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:23:54 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5624)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 7082)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:23:55 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2668)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2907)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:56 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 5.0ms | Allocations: 3101)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:57 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 628)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:23:59 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:00 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:00 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:01 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:01 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:04 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:04 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 627)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:24:05 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `refresh'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 628)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:25:38 -0400
+Processing by UsersController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 3061)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 4566)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:40 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 5.9ms | Allocations: 3265)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:41 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 751)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:42 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:42 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:43 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:44 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:44 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:45 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:46 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:25:46 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:28:06 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 0.8ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:28:06 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:28:07 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:28:07 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:28:07 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:13:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 750)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:30:07 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 123)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2703)
+Completed 200 OK in 16ms (Views: 3.5ms | ActiveRecord: 4.2ms | Allocations: 7496)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:09 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1066)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:10 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 1076)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:10 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 1096)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:11 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1137)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:12 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1149)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:13 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1152)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:13 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1149)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:14 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1143)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:14 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 1161)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:15 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1175)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:15 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1149)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:30:16 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2308)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 3410)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:17 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1140)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:18 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 1146)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:30:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2306)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 3422)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:30:19 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2306)
+Completed 200 OK in 9ms (Views: 5.6ms | ActiveRecord: 0.7ms | Allocations: 3404)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:30:20 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1143)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:31:25 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:7:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 13.9ms | Allocations: 2306)
+Completed 200 OK in 39ms (Views: 18.3ms | ActiveRecord: 1.1ms | Allocations: 3389)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:31:28 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 6ms (Views: 1.5ms | ActiveRecord: 0.6ms | Allocations: 1152)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:31:28 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1161)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:31:29 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1140)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:31:29 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1155)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:31:30 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 1143)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:31:30 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:17:in `refresh'
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1152)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:34:17 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | Allocations: 2709)
+Completed 200 OK in 19ms (Views: 3.4ms | ActiveRecord: 10.0ms | Allocations: 7515)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:34:35 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | Allocations: 2705)
+Completed 200 OK in 10ms (Views: 2.7ms | ActiveRecord: 3.9ms | Allocations: 7456)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:36 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1054)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:37 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 1076)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:37 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 1144)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:38 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 4229)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:38 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1147)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:39 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1167)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:34:40 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 15.9ms | Allocations: 2704)
+Completed 200 OK in 24ms (Views: 19.4ms | ActiveRecord: 0.4ms | Allocations: 4397)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:34:48 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | Allocations: 2707)
+Completed 200 OK in 8ms (Views: 2.5ms | ActiveRecord: 2.9ms | Allocations: 7525)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:34:49 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 6ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 1036)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:00 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 1067)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:03 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1096)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:03 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 1146)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:04 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1143)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:04 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1158)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:04 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1155)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:05 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.5ms | Allocations: 1158)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:05 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1152)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:05 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1146)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:05 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1140)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:05 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1146)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:06 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1152)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:06 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1149)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:06 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 1149)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:06 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1149)
+
+
+Started GET "/" for 127.0.0.1 at 2024-06-03 09:35:11 -0400
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:5:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 2306)
+Completed 200 OK in 15ms (Views: 7.4ms | ActiveRecord: 0.9ms | Allocations: 3407)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:14 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.6ms | Allocations: 1038)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:19 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 0.7ms | Allocations: 1073)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:19 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1093)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:20 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1164)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:20 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 1174)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:21 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1155)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:21 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1149)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:21 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1140)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:22 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 1149)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:22 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 1143)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:22 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1164)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:27 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 1143)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:27 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 1158)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:28 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1143)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:28 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 1152)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:28 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1134)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:28 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 6ms (Views: 1.0ms | ActiveRecord: 0.7ms | Allocations: 1152)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:29 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 5ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 1155)
+
+
+Started GET "/refresh" for 127.0.0.1 at 2024-06-03 09:35:29 -0400
+Processing by UsersController#refresh as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:15:in `refresh'
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 1143)
+
+

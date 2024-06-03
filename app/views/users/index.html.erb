@@ -1,21 +1,21 @@
 
 <!-- app/views/people/index.html.erb -->
 <h1>Lista de Personas</h1>
-<button id="reload">Recargar Personas</button>
-<ul id="people_list"></ul>
+<button id="reloadButton">Recargar Personas</button>
+<ul id="userList"></ul>
 
 <script>
-  document.getElementById("reload").addEventListener("click", function() {
+document.getElementById("reloadButton").addEventListener("click", function() {
     fetch('/refresh')
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById("people_list");
-        list.innerHTML = '';  // Limpiar la lista antes de agregar nuevos elementos
-        data.forEach(person => {
-          const item = document.createElement("li");
-          item.textContent = `Nombre: ${person.name}, Edad: ${person.age}`;
-          list.appendChild(item);
-        });
-      });
-  });
+        .then(response => response.json())
+        .then(users => {
+            const userList = document.getElementById("userList");
+            userList.innerHTML = '';  // Limpiar la lista antes de agregar nuevos elementos
+            users.forEach(user => {
+                const userItem = document.createElement("li");
+                userItem.textContent = `Nombre: ${user.name}, Email: ${user.email}`;
+                userList.appendChild(userItem);
+            });
+        }).catch(error => console.error('Error:', error));  // Agregar manejo de errores
+});
 </script>

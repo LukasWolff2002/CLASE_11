@@ -1,13 +1,20 @@
 class UsersController < ApplicationController
     def index
-        User.all
+      # Inicia con 1 la primera vez que se accede a la página
+      session[:count] = 1
+      @users = User.all.sample(session[:count])
+      respond_to do |format|
+        format.html  # Si tienes una vista HTML
+        format.json { render json: @users }
+      end
     end
-
+  
     def refresh
-        @users = User.all.sample(1)  # Esto seleccionará 4 personas al azar de la base de datos
-        respond_to do |format|
-          format.json { render json: @users }
-        end
+      # Incrementa el contador cada vez que se llama a refresh
+      session[:count] += 1
+      @users = User.all.sample(session[:count])
+      respond_to do |format|
+        format.json { render json: @users }
+      end
     end
-    
-end
+  end
