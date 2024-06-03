@@ -1,1 +1,21 @@
-<h1>Aqui se muestran los user</h1>
+
+<!-- app/views/people/index.html.erb -->
+<h1>Lista de Personas</h1>
+<button id="reload">Recargar Personas</button>
+<ul id="people_list"></ul>
+
+<script>
+  document.getElementById("reload").addEventListener("click", function() {
+    fetch('/refresh')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById("people_list");
+        list.innerHTML = '';  // Limpiar la lista antes de agregar nuevos elementos
+        data.forEach(person => {
+          const item = document.createElement("li");
+          item.textContent = `Nombre: ${person.name}, Edad: ${person.age}`;
+          list.appendChild(item);
+        });
+      });
+  });
+</script>

@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   root "users#index"
 
   resources :users
+  get 'refresh', to: 'users#refresh'
+
 
 end
